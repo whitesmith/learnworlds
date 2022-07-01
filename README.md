@@ -2,6 +2,8 @@
 
 Wrapper for the Learn Worlds API
 
+**IMPORTANT!:** This gem is still on a early state and not all features are built in yet. Feel free to add features or if you need our help please reach us at nuno_lopes@whitesmith.co
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -13,6 +15,74 @@ If bundler is not being used to manage dependencies, install the gem by executin
     $ gem install learnworlds
 
 ## Usage
+
+### Authentication with Client Credentials grant
+
+To authenticate with client credentials grant you need to 
+
+```ruby
+client = LearnWorlds::Client.new(
+  client_id: 'xxxxxxxxxxx',
+  client_secret: 'xxxxxxxxx',
+  base_url: 'https://yourschool.mylearnworlds.com'
+)
+
+client.authentication.authenticate('client_credentials')
+
+```
+
+If you already have the accesse token you can initiate the client in the following way
+
+```ruby
+client = LearnWorlds::Client.new(
+  access_token: 'xxxxxxxx',
+  base_url: 'https://yourschool.mylearnworlds.com'
+)
+```
+
+you can also save some lines of code if you set the folloing env vars `LEARN_WORLDS_CLIENT_ID`, `LEARN_WORLDS_CLIENT_SECRET`, `LEARN_WORLDS_BASE_URL`
+
+Once that is done, you can initialize the client with 
+
+```ruby
+client = LearnWorlds::Client.new
+```
+
+Everytime you call `authenticate('client_credentials')` a new request will be made to Learn Worlds. 
+If you want to avoid that you can define custom getters and setters for the access token via the configuration.
+
+You can use that to add logic to persist or get the access token on your side and you can also add some logic to verify if the access token is still valid.
+
+For example:
+
+```ruby
+LearnWorlds.configure do |config|
+  
+  # return nil if access_token is invalid and you want to proceed with the authentication process
+  config.retrieve_access_token_method =  ->() { Rails.cache.fetch("learnworlds_access_token") }
+
+  config.persist_access_token_method =  ->(access_token) { Rails.cache.write('learnworlds_access_token', access_token) } }
+end
+```
+
+### User Resource
+
+```ruby
+# lists all users
+client.user.list
+
+# creates a user
+client.user.create(email: 'test@test.com', username: 'test')
+
+# updates a user
+client.user.update(user_id: 'user_id', username: 'updated_username')
+
+# finds a user
+client.user.find(user_id: 'user_id')
+
+# enrolls a user on a course
+client.user.enroll(user_id: 'user_id', product_id: 'course_id', product_type: 'course', price: 0)
+```
 
 
 ## Development
