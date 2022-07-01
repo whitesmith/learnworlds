@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "learnworlds"
+require "learn_worlds"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

@@ -1,13 +1,28 @@
 AllCops:
   TargetRubyVersion: 2.6
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/QuotedSymbols:
+  Enabled: false
 
 Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
+  Enabled: false
+
+Style/OpenStructUse:
+  Enabled: false
 
 Style/StringLiteralsInInterpolation:
   Enabled: true
   EnforcedStyle: double_quotes
+
+Lint/SymbolConversion:
+  Enabled: false
 
 Layout/LineLength:
   Max: 120
