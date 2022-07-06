@@ -61,7 +61,7 @@ LearnWorlds.configure do |config|
   # return nil if access_token is invalid and you want to proceed with the authentication process
   config.retrieve_access_token_method =  ->() { Rails.cache.fetch("learnworlds_access_token") }
 
-  config.persist_access_token_method =  ->(access_token) { Rails.cache.write('learnworlds_access_token', access_token) } }
+  config.persist_access_token_method =  ->(access_token, expires_in) { Rails.cache.write('learnworlds_access_token', access_token) } }
 end
 ```
 
