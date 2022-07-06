@@ -15,7 +15,7 @@ module LearnWorlds
       end
 
       # custom method to store the access token until it expires so we don't need to make uneccessary calls
-      LearnWorlds.configuration.persist_access_token_method&.call(client.access_token)
+      LearnWorlds.configuration.persist_access_token_method&.call(client.access_token, client.expires_in)
     end
 
     # custom retrieve method can be used if you store the access token on your side until it expires for example
@@ -40,6 +40,7 @@ module LearnWorlds
       )
       response_body = Object.new(response.body)
       client.access_token = response_body.tokenData.access_token
+      client.expires_in = response_body.tokenData.expires_in
     end
   end
 end

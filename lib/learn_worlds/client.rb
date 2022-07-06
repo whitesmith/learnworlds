@@ -6,7 +6,7 @@ require_relative "object"
 module LearnWorlds
   class Client
     attr_reader :base_url, :client_id, :client_secret
-    attr_accessor :access_token
+    attr_accessor :access_token, :expires_in
 
     def initialize(client_id: nil, client_secret: nil, base_url: nil, access_token: nil)
       @client_id = client_id || ENV.fetch('"LEARN_WORLDS_CLIENT_ID"')

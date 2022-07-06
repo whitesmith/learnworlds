@@ -26,3 +26,6 @@ Lint/SymbolConversion:
 
 Layout/LineLength:
   Max: 120
+
+Metrics/MethodLength:
+  Max: 12
