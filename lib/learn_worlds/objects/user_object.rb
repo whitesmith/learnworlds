@@ -1,4 +1,4 @@
 module LearnWorlds
-  class User < Object
+  class UserObject < Object
   end
 end

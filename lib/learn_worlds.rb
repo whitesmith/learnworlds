@@ -9,7 +9,7 @@ module LearnWorlds
   autoload :Collection, "learn_worlds/collection"
   autoload :Configuration, "learn_worlds/configuration"
 
-  autoload :User, "learn_worlds/objects/user"
+  autoload :UserObject, "learn_worlds/objects/user_object"
 
   autoload :Resource, "learn_worlds/resource"
   autoload :UserResource, "learn_worlds/resources/user_resource"

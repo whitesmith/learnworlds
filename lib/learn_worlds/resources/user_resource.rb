@@ -4,15 +4,15 @@ module LearnWorlds
 
     def list(**params)
       response = get_request(ENDPOINT, params)
-      Collection.from_response(response, key: "data", type: User)
+      Collection.from_response(response, key: "data", type: UserObject)
     end
 
     def create(**attributes)
-      User.new(post_request(ENDPOINT, attributes).body)
+      UserObject.new(post_request(ENDPOINT, attributes).body)
     end
 
     def find(user_id:)
-      User.new(get_request("#{ENDPOINT}/#{user_id}").body)
+      UserObject.new(get_request("#{ENDPOINT}/#{user_id}").body)
     end
 
     def update(user_id:, **params)
