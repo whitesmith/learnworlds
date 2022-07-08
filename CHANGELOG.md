@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.1.3] - 2022-07-08
+
+- Rename User to UserObject in order to avoid conflicts (breaking change)
+
 ## [0.1.2] - 2022-07-06
 
 - Fix bug. Env var for client id was with double quotes
