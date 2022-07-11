@@ -84,6 +84,14 @@ client.user.find(user_id: 'user_id')
 client.user.enroll(user_id: 'user_id', product_id: 'course_id', product_type: 'course', price: 0)
 ```
 
+### SSO Resource
+
+```ruby
+
+client.sso.redirect(email: 'test@test.com', redirect_to 'xyz.learnworlds.com/courses')
+
+```
+
 
 ## Development
 

@@ -10,7 +10,7 @@ module LearnWorlds
 
     def initialize(client_id: nil, client_secret: nil, base_url: nil, access_token: nil)
       @client_id = client_id || ENV.fetch('LEARN_WORLDS_CLIENT_ID')
-      @client_secret = client_secret || ENV.fetch('LEARN_WORLDS_CLIENT_SECRET')
+      @client_secret = client_secret || ENV.fetch('LEARN_WORLDS_CLIENT_SECRET', nil)
       @base_url = base_url || ENV.fetch('LEARN_WORLDS_BASE_URL')
       @access_token = access_token
     end
@@ -21,6 +21,10 @@ module LearnWorlds
 
     def authentication
       AuthenticationResource.new(self)
+    end
+
+    def sso
+      SingleSignOnResource.new(self)
     end
 
     def connection

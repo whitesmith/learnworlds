@@ -12,8 +12,9 @@ module LearnWorlds
   autoload :UserObject, "learn_worlds/objects/user_object"
 
   autoload :Resource, "learn_worlds/resource"
-  autoload :UserResource, "learn_worlds/resources/user_resource"
   autoload :AuthenticationResource, "learn_worlds/resources/authentication_resource"
+  autoload :SingleSignOnResource, "learn_worlds/resources/single_sign_on_resource"
+  autoload :UserResource, "learn_worlds/resources/user_resource"
 
   class << self
     # Instantiate the Configuration singleton
