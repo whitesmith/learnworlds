@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.2.0] - 2022-07-11
+
+- Adds single sign on fucntionality
+- Default client secret to nil if not passed and not on env vars
+
 ## [0.1.3] - 2022-07-08
 
 - Rename User to UserObject in order to avoid conflicts (breaking change)
