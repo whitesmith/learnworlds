@@ -82,6 +82,13 @@ client.user.find(user_id: 'user_id')
 
 # enrolls a user on a course
 client.user.enroll(user_id: 'user_id', product_id: 'course_id', product_type: 'course', price: 0)
+
+# attaches tags to an user
+client.user.attach_tags(user_id: 'user_id', tags: ['tag1', 'tag2'])
+
+# detaches tags from an user
+client.user.detach_tags(user_id: 'user_id', tags: ['tag1', 'tag2'])
+
 ```
 
 ### SSO Resource

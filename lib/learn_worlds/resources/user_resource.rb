@@ -24,5 +24,15 @@ module LearnWorlds
       post_request("#{ENDPOINT}/#{user_id}/enrollment", attributes)
       true
     end
+
+    def attach_tags(user_id:, tags:)
+      put_request("#{ENDPOINT}/#{user_id}/tags", tags: tags, action: 'attach')
+      true
+    end
+
+    def detach_tags(user_id:, tags:)
+      put_request("#{ENDPOINT}/#{user_id}/tags", tags: tags, action: 'detach')
+      true
+    end
   end
 end

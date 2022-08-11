@@ -1,8 +1,12 @@
 ## [Unreleased]
 
+## [0.2.1] - 2022-08-09
+
+- Add attach and detach methods to the user resource
+
 ## [0.2.0] - 2022-07-11
 
-- Adds single sign on fucntionality
+- Adds single sign on functionality
 - Default client secret to nil if not passed and not on env vars
 
 ## [0.1.3] - 2022-07-08
