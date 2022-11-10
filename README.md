@@ -18,7 +18,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ### Authentication with Client Credentials grant
 
-To authenticate with client credentials grant you need to 
+To authenticate with client credentials grant you need to
 
 ```ruby
 client = LearnWorlds::Client.new(
@@ -42,13 +42,13 @@ client = LearnWorlds::Client.new(
 
 you can also save some lines of code if you set the folloing env vars `LEARN_WORLDS_CLIENT_ID`, `LEARN_WORLDS_CLIENT_SECRET`, `LEARN_WORLDS_BASE_URL`
 
-Once that is done, you can initialize the client with 
+Once that is done, you can initialize the client with
 
 ```ruby
 client = LearnWorlds::Client.new
 ```
 
-Everytime you call `authenticate('client_credentials')` a new request will be made to Learn Worlds. 
+Everytime you call `authenticate('client_credentials')` a new request will be made to Learn Worlds.
 If you want to avoid that you can define custom getters and setters for the access token via the configuration.
 
 You can use that to add logic to persist or get the access token on your side and you can also add some logic to verify if the access token is still valid.
@@ -57,7 +57,7 @@ For example:
 
 ```ruby
 LearnWorlds.configure do |config|
-  
+
   # return nil if access_token is invalid and you want to proceed with the authentication process
   config.retrieve_access_token_method =  ->() { Rails.cache.fetch("learnworlds_access_token") }
 
@@ -97,8 +97,9 @@ client.user.detach_tags(user_id: 'user_id', tags: ['tag1', 'tag2'])
 
 client.sso.redirect(email: 'test@test.com', redirect_to 'xyz.learnworlds.com/courses')
 
-```
+client.sso.redirect_with_id(user_id: 'learnworlds_user_id', redirect_to 'xyz.learnworlds.com/courses')
 
+```
 
 ## Development
 

@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.2.2] - 2022-08-09
+
+- Add possibility to sso with user id instead of email
+
 ## [0.2.1] - 2022-08-09
 
 - Add attach and detach methods to the user resource
@@ -27,4 +31,3 @@
 - Initial release
   - Adds a basic structure to aid future developments
   - Adds methods to interact with the user resource ( list, create, update, find and enroll )
-  
