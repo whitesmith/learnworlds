@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.2.3] - 2022-08-09
+
+- Add enrollments to user
+
 ## [0.2.2] - 2022-08-09
 
 - Add possibility to sso with user id instead of email

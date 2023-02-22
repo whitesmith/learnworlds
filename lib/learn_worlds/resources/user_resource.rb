@@ -15,6 +15,11 @@ module LearnWorlds
       UserObject.new(get_request("#{ENDPOINT}/#{user_id}").body)
     end
 
+    def enrollments(user_id:)
+      response = get_request("#{ENDPOINT}/#{user_id}/courses")
+      Collection.from_response(response, key: "data", type: EnrollmentObject)
+    end
+
     def update(user_id:, **params)
       put_request("#{ENDPOINT}/#{user_id}", params)
       true

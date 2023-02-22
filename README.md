@@ -80,6 +80,9 @@ client.user.update(user_id: 'user_id', username: 'updated_username')
 # finds a user
 client.user.find(user_id: 'user_id')
 
+# returns a list of enrollnments for a specific user
+client.user.enrollments(user_id: 'user_id')
+
 # enrolls a user on a course
 client.user.enroll(user_id: 'user_id', product_id: 'course_id', product_type: 'course', price: 0)
 
