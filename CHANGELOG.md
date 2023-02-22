@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.2.4] - 2022-08-09
+
+- Fix issue with previous version
+
 ## [0.2.3] - 2022-08-09
 
 - Add enrollments to user

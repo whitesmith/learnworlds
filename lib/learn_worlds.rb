@@ -10,6 +10,7 @@ module LearnWorlds
   autoload :Configuration, "learn_worlds/configuration"
 
   autoload :UserObject, "learn_worlds/objects/user_object"
+  autoload :EnrollmentObject, "learn_worlds/objects/enrollment_object"
 
   autoload :Resource, "learn_worlds/resource"
   autoload :AuthenticationResource, "learn_worlds/resources/authentication_resource"
